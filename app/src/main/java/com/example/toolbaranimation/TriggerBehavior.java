@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,8 +40,18 @@ public class TriggerBehavior extends CoordinatorLayout.Behavior<AppBarLayout> {
 
         Log.i("NestedScroll", "dyConsumed: " + dyConsumed);
 
-        TextView textView = coordinatorLayout.findViewById(R.id.tv_count_bonus);
-        int height = textView.getHeight();
-        textView.setHeight(height - dyConsumed);
+        TextView tvCountBonus = coordinatorLayout.findViewById(R.id.tv_count_bonus);
+        TextView tvCurrentBO = coordinatorLayout.findViewById(R.id.tv_current_bo);
+        ImageView iv = coordinatorLayout.findViewById(R.id.iv);
+
+        int height = tvCountBonus.getHeight();
+
+        if (height > 0){
+            tvCountBonus.setHeight(height - dyConsumed);
+        } else {
+            float y = tvCurrentBO.getY();
+            tvCurrentBO.setY(y-dyConsumed);
+        }
     }
+
 }
