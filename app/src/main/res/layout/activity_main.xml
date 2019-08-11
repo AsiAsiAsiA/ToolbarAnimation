@@ -8,6 +8,7 @@
     android:fitsSystemWindows="true">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
@@ -54,6 +55,7 @@
         android:id="@+id/nsv"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
+        android:layout_marginTop="?actionBarSize"
         android:background="@color/white"
         >
 

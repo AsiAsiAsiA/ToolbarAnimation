@@ -35,6 +35,22 @@ public class TriggerBehavior extends CoordinatorLayout.Behavior<AppBarLayout> {
             int type) {
         super.onNestedPreScroll(coordinatorLayout, child, target, dx, dy, consumed, type);
         Log.i("NestedScroll", "dy: " + dy);
+
+        TextView tvCountBonus = coordinatorLayout.findViewById(R.id.tv_count_bonus);
+        NestedScrollView nsv = coordinatorLayout.findViewById(R.id.nsv);
+
+        int height = tvCountBonus.getHeight();
+
+        if (dy > 0){
+            tvCountBonus.setHeight(height - dy);
+
+        } else {
+            if (nsv.getScrollY() == 0) {
+                tvCountBonus.setHeight(height - dy);
+            }
+        }
+        Log.i("NestedScroll", "dyConsumed: " + dy);
+        Log.i("NestedScroll", "nsv.getScrollY()" + nsv.getScrollY());
     }
 
     @Override
@@ -46,14 +62,6 @@ public class TriggerBehavior extends CoordinatorLayout.Behavior<AppBarLayout> {
             int dxUnconsumed, int dyUnconsumed,
             int type) {
         super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, type);
-
-        Log.i("NestedScroll", "dyConsumed: " + dyConsumed);
-
-        TextView tvCountBonus = coordinatorLayout.findViewById(R.id.tv_count_bonus);
-        NestedScrollView nsv = coordinatorLayout.findViewById(R.id.nsv);
-
-        int height = tvCountBonus.getHeight();
-        tvCountBonus.setHeight(height - dyConsumed);
 //        nsv.scrollTo(0,0);
 
 //        if (height > 0){
