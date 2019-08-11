@@ -7,14 +7,21 @@
     android:background="@color/colorPrimaryDark"
     android:fitsSystemWindows="true">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar"
+    <LinearLayout
+        android:id="@+id/main_ll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:fitsSystemWindows="true"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_behavior=".TriggerBehavior"
         >
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:fitsSystemWindows="true"
+            >
 
             <ImageView
                 android:id="@+id/iv"
@@ -49,24 +56,26 @@
                 android:textColor="@color/white"
                 />
 
-    </com.google.android.material.appbar.AppBarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/nsv"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:layout_marginTop="?actionBarSize"
-        android:background="@color/white"
-        >
-
-        <TextView
-            android:padding="10dp"
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsv"
+            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:lineSpacingExtra="8dp"
-            android:text="@string/lorem"
-            />
-    </androidx.core.widget.NestedScrollView>
+            android:background="@color/white"
+            >
+
+            <TextView
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:lineSpacingExtra="8dp"
+                android:text="@string/lorem"
+                />
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
