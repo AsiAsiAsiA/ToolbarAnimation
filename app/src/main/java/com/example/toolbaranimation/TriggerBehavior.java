@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.widget.NestedScrollView;
 
 import com.google.android.material.appbar.AppBarLayout;
 
@@ -24,8 +25,16 @@ public class TriggerBehavior extends CoordinatorLayout.Behavior<AppBarLayout> {
     }
 
     @Override
-    public void onNestedPreScroll(@NonNull CoordinatorLayout coordinatorLayout, @NonNull AppBarLayout child, @NonNull View target, int dx, int dy, @NonNull int[] consumed, int type) {
+    public void onNestedPreScroll(
+            @NonNull CoordinatorLayout coordinatorLayout,
+            @NonNull AppBarLayout child,
+            @NonNull View target,
+            int dx,
+            int dy,
+            @NonNull int[] consumed,
+            int type) {
         super.onNestedPreScroll(coordinatorLayout, child, target, dx, dy, consumed, type);
+        Log.i("NestedScroll", "dy: " + dy);
     }
 
     @Override
@@ -41,17 +50,27 @@ public class TriggerBehavior extends CoordinatorLayout.Behavior<AppBarLayout> {
         Log.i("NestedScroll", "dyConsumed: " + dyConsumed);
 
         TextView tvCountBonus = coordinatorLayout.findViewById(R.id.tv_count_bonus);
-        TextView tvCurrentBO = coordinatorLayout.findViewById(R.id.tv_current_bo);
-        ImageView iv = coordinatorLayout.findViewById(R.id.iv);
+        NestedScrollView nsv = coordinatorLayout.findViewById(R.id.nsv);
 
         int height = tvCountBonus.getHeight();
+        tvCountBonus.setHeight(height - dyConsumed);
+//        nsv.scrollTo(0,0);
 
-        if (height > 0){
-            tvCountBonus.setHeight(height - dyConsumed);
-        } else {
-            float y = tvCurrentBO.getY();
-            tvCurrentBO.setY(y-dyConsumed);
-        }
+//        if (height > 0){
+//            tvCountBonus.setHeight(height - dyConsumed);
+//            nsv.scrollTo(0,0);
+//        } else {
+//            float y = tvCurrentBO.getY();
+//            tvCurrentBO.setY(y-dyConsumed);
+//        }
     }
 
+    @Override
+    public void onStopNestedScroll(
+            @NonNull CoordinatorLayout coordinatorLayout,
+            @NonNull AppBarLayout child,
+            @NonNull View target,
+            int type) {
+        super.onStopNestedScroll(coordinatorLayout, child, target, type);
+    }
 }

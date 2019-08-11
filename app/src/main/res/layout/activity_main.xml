@@ -23,7 +23,6 @@
                 android:src="@drawable/borrower"
                 android:layout_gravity="center"
                 android:layout_marginTop="44dp"
-                app:layout_scrollFlags="scroll"
                 />
 
             <TextView
@@ -35,7 +34,6 @@
                 android:text="Опция"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_scrollFlags="scroll"
                 />
 
             <TextView
@@ -48,18 +46,19 @@
                 android:textStyle="bold"
                 android:gravity="center"
                 android:textColor="@color/white"
-                app:layout_scrollFlags="scroll"
                 />
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:background="@color/white"
         >
 
         <TextView
+            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
