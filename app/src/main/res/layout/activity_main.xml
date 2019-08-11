@@ -12,40 +12,42 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
         android:fitsSystemWindows="true"
+        app:layout_scrollFlags="scroll"
         >
 
-        <ImageView
-            android:id="@+id/main.backdrop"
-            android:layout_width="128dp"
-            android:layout_height="wrap_content"
-            android:scaleType="matrix"
-            android:src="@drawable/borrower"
-            android:layout_gravity="center"
-            android:layout_marginTop="44dp"
-            />
+            <ImageView
+                android:id="@+id/main.backdrop"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:scaleType="matrix"
+                android:src="@drawable/borrower"
+                android:layout_gravity="center"
+                android:layout_marginTop="44dp"
+                app:layout_scrollFlags="scroll"
+                />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:lineSpacingExtra="8dp"
-            android:text="Опция заемщик"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingExtra="8dp"
+                android:text="Опция"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_scrollFlags="scroll"
+                />
 
-        <TextView
-            android:id="@+id/tv_count_bonus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:lineSpacingExtra="8dp"
-            android:text="31 210 миль"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textColor="@color/white"
-            />
-
+            <TextView
+                android:id="@+id/tv_count_bonus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:lineSpacingExtra="8dp"
+                android:text="31 210"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/white"
+                />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -53,7 +55,8 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:background="@color/white"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
 
         <TextView
             android:layout_width="match_parent"
