@@ -16,6 +16,7 @@
 
     </Transition>
 
+    <!--Начало движения-->
     <ConstraintSet android:id="@+id/starting_set">
         <Constraint
             android:id="@id/nsv"
@@ -26,6 +27,7 @@
             />
     </ConstraintSet>
 
+    <!--Окончание движения-->
     <ConstraintSet android:id="@+id/ending_set">
         <Constraint
             android:id="@id/nsv"
