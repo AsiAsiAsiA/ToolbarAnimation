@@ -20,8 +20,35 @@
     <ConstraintSet android:id="@+id/starting_set">
         <Constraint
             android:id="@id/nsv"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintTop_toBottomOf="@id/tv_count_bonus"
             app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <Constraint
+            android:id="@id/tv_current_bo"
+            app:layout_constraintTop_toBottomOf="@id/iv"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <Constraint
+            android:id="@id/iv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            />
+
+        <Constraint
+            android:id="@id/tv_count_bonus"
+            app:layout_constraintTop_toBottomOf="@id/iv"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
@@ -31,11 +58,40 @@
     <ConstraintSet android:id="@+id/ending_set">
         <Constraint
             android:id="@id/nsv"
-            android:layout_marginTop="50dp"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="3dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_current_bo"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            />
+
+        <Constraint
+            android:id="@id/tv_current_bo"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="25dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <Constraint
+            android:id="@id/tv_count_bonus"
+            app:layout_constraintTop_toBottomOf="@id/iv"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <Constraint
+            android:id="@id/iv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:visibility="invisible"
             />
     </ConstraintSet>
 
