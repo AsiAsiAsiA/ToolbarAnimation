@@ -8,26 +8,30 @@
 		android:id="@+id/my_transition"
 		app:constraintSetStart="@+id/starting_set"
 		app:constraintSetEnd="@+id/ending_set"
-		app:duration="2000"
+		app:duration="100"
 		>
 
-		<!--        <KeyFrameSet>-->
-		<!--            <KeyAttribute-->
-		<!--                app:framePosition="0"-->
-		<!--                app:motionTarget="@id/tv_current_bo">-->
-		<!--                <CustomAttribute-->
-		<!--                    app:layout_constraintTop_toBottomOf="@id/iv" />-->
-		<!--            </KeyAttribute>-->
+		<OnSwipe
+			app:touchAnchorId="@id/nsv"
+			app:touchAnchorSide="top"
+			app:dragDirection="dragUp" />
 
-		<!--            <KeyAttribute-->
-		<!--                app:framePosition="10"-->
-		<!--                app:layout_constraintTop_toBottomOf="@id/iv"-->
-		<!--                app:motionTarget="@id/tv_current_bo">-->
 
-		<!--                <CustomAttribute-->
-		<!--                    app:layout_constraintTop_toBottomOf="@id/iv" />-->
-		<!--            </KeyAttribute>-->
-		<!--        </KeyFrameSet>-->
+<!--		        <KeyFrameSet>-->
+<!--		            <KeyAttribute-->
+<!--		                app:framePosition="0"-->
+<!--		                app:motionTarget="@id/tv_current_bo">-->
+<!--		                <CustomAttribute-->
+<!--		                    app:layout_constraintTop_toBottomOf="@id/iv" />-->
+<!--		            </KeyAttribute>-->
+
+<!--		            <KeyAttribute-->
+<!--		                app:framePosition="10"-->
+<!--		                app:motionTarget="@id/tv_current_bo">-->
+
+
+<!--		            </KeyAttribute>-->
+<!--		        </KeyFrameSet>-->
 
 	</Transition>
 

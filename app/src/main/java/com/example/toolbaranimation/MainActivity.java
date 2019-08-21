@@ -35,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTransitionCompleted(MotionLayout motionLayout, int i) {
-                Log.i("Animation","Анимация завершена");
                 if (i == R.id.ending_set) {
+                    Log.i("Animation","Анимация завершена");
                     motion_container.setTransition(R.id.ending_set, R.id.set_3);
-                    motion_container.setTransitionDuration(2000);
+                    motion_container.setTransitionDuration(500);
                     motion_container.transitionToEnd();
                 }
             }
