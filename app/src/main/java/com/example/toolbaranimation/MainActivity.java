@@ -6,24 +6,27 @@ import androidx.constraintlayout.motion.widget.MotionLayout;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+
 import androidx.core.widget.NestedScrollView;
 
 public class MainActivity extends AppCompatActivity {
     MotionLayout motion_container;
     NestedScrollView nsv;
+    ImageView iv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_motion);
 
+        nsv = findViewById(R.id.nsv);
+        iv = findViewById(R.id.iv);
         motion_container = findViewById(R.id.motion_container);
-//        nsv = findViewById(R.id.nsv);
-
         motion_container.setTransitionListener(new MotionLayout.TransitionListener() {
             @Override
             public void onTransitionStarted(MotionLayout motionLayout, int i, int i1) {
-
+                Log.i("Animation","Анимация начата");
             }
 
             @Override
@@ -32,11 +35,25 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTransitionCompleted(MotionLayout motionLayout, int i) {
+                Log.i("Animation","Анимация завершена");
+                if (i == R.id.ending_set) {
+                    motion_container.setTransition(R.id.ending_set, R.id.set_3);
+                    motion_container.setTransitionDuration(2000);
+                    motion_container.transitionToEnd();
+                }
             }
 
             @Override
             public void onTransitionTrigger(MotionLayout motionLayout, int i, boolean b, float v) {
 
+            }
+        });
+
+        iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i("Animation","Клик");
+                motion_container.transitionToEnd();
             }
         });
     }

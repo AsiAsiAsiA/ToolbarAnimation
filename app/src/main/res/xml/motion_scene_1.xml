@@ -1,75 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:motion="http://schemas.android.com/tools"
 	>
 
 	<Transition
 		android:id="@+id/my_transition"
-		app:constraintSetStart="@+id/starting_set"
-		app:constraintSetEnd="@+id/ending_set"
-		app:duration="2000"
+		app:constraintSetStart="@id/set_2"
+		app:constraintSetEnd="@id/set_3"
+		app:duration="1000"
 		>
-
-		<!--        <KeyFrameSet>-->
-		<!--            <KeyAttribute-->
-		<!--                app:framePosition="0"-->
-		<!--                app:motionTarget="@id/tv_current_bo">-->
-		<!--                <CustomAttribute-->
-		<!--                    app:layout_constraintTop_toBottomOf="@id/iv" />-->
-		<!--            </KeyAttribute>-->
-
-		<!--            <KeyAttribute-->
-		<!--                app:framePosition="10"-->
-		<!--                app:layout_constraintTop_toBottomOf="@id/iv"-->
-		<!--                app:motionTarget="@id/tv_current_bo">-->
-
-		<!--                <CustomAttribute-->
-		<!--                    app:layout_constraintTop_toBottomOf="@id/iv" />-->
-		<!--            </KeyAttribute>-->
-		<!--        </KeyFrameSet>-->
 
 	</Transition>
 
 	<!--Начало движения-->
-	<ConstraintSet android:id="@+id/starting_set">
+	<ConstraintSet android:id="@+id/set_2">
 		<Constraint
 			android:id="@id/nsv"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			app:layout_constraintRight_toRightOf="parent"
-			app:layout_constraintTop_toBottomOf="@id/tv_count_bonus"
-			/>
-
-		<Constraint
-			android:id="@+id/tv_current_bo"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			app:layout_constraintRight_toRightOf="parent"
-			app:layout_constraintTop_toBottomOf="@id/iv"
-			/>
-
-	</ConstraintSet>
-
-	<!--Среднее состояние-->
-	<ConstraintSet android:id="@+id/ending_set">
-		<Constraint
-			android:id="@id/nsv"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
 			android:layout_marginTop="3dp"
-			app:layout_constraintRight_toRightOf="parent"
 			app:layout_constraintTop_toBottomOf="@id/tv_current_bo"
+			app:layout_constraintRight_toRightOf="parent"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
 			/>
 
 		<Constraint
 			android:id="@+id/tv_current_bo"
+			app:layout_constraintTop_toBottomOf="@id/iv"
+			app:layout_constraintRight_toRightOf="parent"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			app:layout_constraintRight_toRightOf="parent"
-			app:layout_constraintTop_toBottomOf="@id/iv"
 			/>
 
+		<Constraint
+			android:id="@id/iv"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			android:layout_marginTop="8dp"
+			android:layout_width="128dp"
+			android:layout_height="128dp"
+			/>
+
+		<Constraint
+			android:id="@id/tv_count_bonus"
+			app:layout_constraintTop_toBottomOf="@id/iv"
+			app:layout_constraintRight_toRightOf="parent"
+			android:layout_marginTop="20dp"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			/>
 	</ConstraintSet>
 
 	<!--Окончание движения-->
@@ -112,4 +91,5 @@
 			android:visibility="invisible"
 			/>
 	</ConstraintSet>
+
 </MotionScene>
