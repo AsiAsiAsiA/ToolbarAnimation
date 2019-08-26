@@ -6,6 +6,12 @@
     android:orientation="vertical"
     >
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
     <View
         android:id="@+id/animateView"
         android:layout_width="100dp"
